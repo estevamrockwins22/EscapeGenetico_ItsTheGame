@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ESCAPE GENÉTICO: O CÓDIGO DA VIDA</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="bg"></canvas>
+<div class="scan"></div>
+
+<main>
+  <!-- TELA INICIAL -->
+  <section id="start" class="screen">
+    <div class="panel hero">
+      <div class="meta">
+        <span>OPERAÇÃO: HELIX</span>
+        <span>CLASSIFICAÇÃO: <b class="warn">CONFIDENCIAL</b></span>
+        <span>STATUS: <b class="alert">SISTEMA COMPROMETIDO</b></span>
+      </div>
+      <h1 class="glitch" data-text="ESCAPE GENÉTICO">ESCAPE GENÉTICO</h1>
+      <h2>O CÓDIGO DA VIDA</h2>
+      <p class="lead">“Uma falha no sistema. Seis enigmas científicos. Uma missão que pode mudar o futuro.”</p>
+      <button class="btn big" id="btnStart">[ INICIAR OPERAÇÃO ]</button>
+    </div>
+  </section>
+
+  <!-- INICIALIZAÇÃO -->
+  <section id="boot" class="screen">
+    <div class="panel"><pre id="term" class="term"></pre></div>
+  </section>
+
+  <!-- HISTÓRIA -->
+  <section id="story" class="screen">
+    <div class="panel story">
+      <h2>PROJETO AURORA — RELATÓRIO DE INCIDENTE</h2>
+      <p>Há algumas horas, uma falha comprometeu os sistemas do Projeto Aurora, um centro de pesquisa dedicado ao estudo da genética, hereditariedade e dinâmica populacional.</p>
+      <p>O laboratório armazenava informações importantes sobre uma população fictícia e pesquisas científicas.</p>
+      <p>Após a falha, o protocolo de segurança foi dividido em seis módulos.</p>
+      <p>Cada módulo contém um desafio científico. Para recuperar o arquivo central, será necessário resolver todos os enigmas, reunir os seis dígitos e demonstrar conhecimento científico.</p>
+      <p class="alert">O tempo está acabando.</p>
+      <p>Vocês foram convocados para investigar o laboratório, recuperar o arquivo e impedir que o conhecimento científico seja utilizado irresponsavelmente.</p>
+      <p><b>A missão começa agora.</b></p>
+      <button class="btn big" id="btnAccept">[ ACEITAR MISSÃO ]</button>
+    </div>
+  </section>
+
+  <!-- JOGO -->
+  <section id="game" class="screen">
+    <header class="hud">
+      <div class="brand">HELIX<small>Projeto Aurora</small></div>
+      <div class="timer" id="timer">45:00</div>
+      <div class="hud-btns">
+        <button class="btn sm" id="btnHint" title="Pista do módulo atual">DICAS</button>
+        <button class="btn sm" id="btnHelp">INSTRUÇÕES</button>
+        <button class="btn sm" id="btnSound">SOM: ON</button>
+        <button class="btn sm" id="btnFull">TELA CHEIA</button>
+        <button class="btn sm danger" id="btnReset">REINICIAR</button>
+      </div>
+      <div class="progress"><i id="bar"></i></div>
+    </header>
+
+    <div class="layout">
+      <aside>
+        <div class="panel">
+          <h3>Módulos de investigação</h3>
+          <nav id="nav"></nav>
+        </div>
+        <div class="panel">
+          <h3>Dígitos descobertos</h3>
+          <div class="digits" id="digits"></div>
+        </div>
+        <div class="panel">
+          <h3>Status do laboratório</h3>
+          <div id="status" class="status"></div>
+        </div>
+      </aside>
+      <section class="panel stage" id="panel"></section>
+    </div>
+  </section>
+
+  <!-- VITÓRIA -->
+  <section id="victory" class="screen">
+    <div class="panel hero win">
+      <h2 class="okc">ACESSO AUTORIZADO.</h2>
+      <p class="big-p">ARQUIVO AURORA RECUPERADO.</p>
+      <p>A investigação demonstrou que a vida é resultado de processos complexos. A ciência nos permite compreender esses processos, mas também exige responsabilidade na utilização do conhecimento.</p>
+      <h1 class="okc">MISSÃO CONCLUÍDA.</h1>
+      <p id="winTime" class="meta"></p>
+      <button class="btn big" id="btnAgain">[ NOVA PARTIDA ]</button>
+    </div>
+  </section>
+
+  <!-- TEMPO ESGOTADO -->
+  <section id="timeout" class="screen">
+    <div class="panel hero lose">
+      <h1 class="alert">TEMPO ESGOTADO</h1>
+      <p>O protocolo de segurança foi encerrado. O Arquivo Aurora permanece bloqueado.</p>
+      <button class="btn big" id="btnRetry">[ TENTAR NOVAMENTE ]</button>
+    </div>
+  </section>
+</main>
+
+<button id="orgBtn" class="org">ORGANIZADOR</button>
+
+<div id="modal" class="modal hidden" role="dialog" aria-modal="true">
+  <div class="panel modal-box">
+    <button class="btn sm close" id="modalClose">FECHAR</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
